@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client';
 import { GET_PROJECT } from '../components/queries/projectQueries';
 import ClientInfo from '../components/ClientInfo';
 import DeleteProjectButton from '../components/deleteProjectButton';
-
+import EditProjectForm from '../components/EditProjectForm';
 export default function Project() {
   const { id } = useParams();
   const {loading,error,data} = useQuery(GET_PROJECT,
@@ -26,7 +26,9 @@ export default function Project() {
           <p className='lead'>{data.project.status}</p>
 
           <ClientInfo client={data.project.client} />
+          <EditProjectForm project = {data.project}/>
           <DeleteProjectButton projectId={data.project.id}/>
+          
       </div>
     )}
     </>

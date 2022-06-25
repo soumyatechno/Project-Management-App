@@ -66,7 +66,7 @@ export default function AddClientModal() {
                     <label className='form-label'>Phone</label>
                     <input type="text" className="form-control" id="phone" value={phone}   onChange={(e)=>setPhone(e.target.value)}/>
                 </div>
-                <button type="submit" className='btn btn-secondary' onClick={handleClose}>Submit</button>
+                <button type="submit" className='btn btn-primary' onClick={handleClose}>Submit</button>
             </form>
         </Modal.Body>
       </Modal>

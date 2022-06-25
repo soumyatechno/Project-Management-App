@@ -36,19 +36,6 @@ export default function AddProjectModal() {
   // Get Clients for select
   const {loading, error, data} = useQuery(GET_CLIENTS);
 
-//   const [addClient] = useMutation(ADD_CLIENT,{
-//       variables:{name,description,status,},
-//       update(cache, {data: {addClient}}){
-//           const {clients} = cache.readQuery({
-//               query:GET_CLIENTS
-//           });
-//           cache.writeQuery({
-//               query:GET_CLIENTS,
-//               data:{clients:[...clients,addClient]},
-//           });
-//       }
-//   });
-
   const onSubmit = (e) => {
     e.preventDefault();
     console.log(name,e);
@@ -128,7 +115,7 @@ export default function AddProjectModal() {
                                     ))}
                                 </Form.Select>
                             </div>
-                            <button type="submit" className='btn btn-primary' onClick={handleClose}>Submit</button>
+                            <button type="submit" className='btn bg-primary' style={{color:"white"}} onClick={handleClose}>Submit</button>
                         </form>
                     </Modal.Body>
                 </Modal>
